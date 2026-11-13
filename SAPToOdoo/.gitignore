@@ -1,0 +1,25 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# .NET build output
+bin/
+obj/
+Debug/
+Release/
+
+# Publish output
+publish/
+
+# Packages / archives
+*.zip
+
+# Local configuration / secrets
+appsettings.Development.json
+appsettings.Local.json
+.env
+
+# User-specific files
+*.user
+*.suo

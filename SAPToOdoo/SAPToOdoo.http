@@ -1,0 +1,31 @@
+@SAPToOdoo_HostAddress = http://localhost:5033
+@ApiKey = replace-with-your-api-key
+
+### API liveness (no auth required)
+GET {{SAPToOdoo_HostAddress}}/health
+Accept: application/json
+
+### Real SAP DI API connectivity check (no auth required)
+GET {{SAPToOdoo_HostAddress}}/health/sap
+Accept: application/json
+
+### Get a Business Partner by CardCode
+GET {{SAPToOdoo_HostAddress}}/api/v1/sap/business-partners/C00001
+Accept: application/json
+X-API-Key: {{ApiKey}}
+X-Correlation-ID: test-001
+
+### Create a Business Partner
+POST {{SAPToOdoo_HostAddress}}/api/v1/sap/business-partners
+Content-Type: application/json
+X-API-Key: {{ApiKey}}
+X-Correlation-ID: test-002
+
+{
+  "cardCode": "C00002",
+  "cardName": "Test Customer",
+  "phone": "03000000000",
+  "email": "customer@example.com"
+}
+
+###
